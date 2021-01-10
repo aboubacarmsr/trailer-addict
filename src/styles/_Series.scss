@@ -1,0 +1,62 @@
+.series {
+    margin-top: 2em;
+    transition: all 0.6s ease;
+    max-width: 100%;
+    overflow: hidden;
+    .series-title{
+        padding: .8em 0;
+        h1{
+            color: $title-grey;
+            font-size: 1.1em;
+        }
+        h3{
+            color: $subtitle-grey;
+        }
+    }
+    ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 1em;
+        max-width: 100%;
+        font-family: "Poppins", sans-serif;
+        li{
+            margin-right: 1em;
+            margin-top: 0.5em;
+            padding: .5em .5em;
+            font-size: .9em;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.6s ease;
+            background-color: rgba(19, 19, 19, 0.432);
+            &:hover{
+                background-color: rgba(189, 195, 199, 0.151);
+            }
+        }
+        .category-active{
+            background-color: #d90429;
+        }
+    }
+    .popular-series{
+        min-height: 80vh;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 0.8fr));
+        grid-column-gap: 1rem;
+        grid-row-gap: 3rem;
+    }
+    .pagination{
+        margin: 2em 0;
+        float: right;
+    }
+    .pagination__link--active{
+        background-color: #2b2d42;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .series-open{
+        margin-left: 20%;
+    }
+}

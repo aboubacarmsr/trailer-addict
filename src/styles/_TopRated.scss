@@ -1,0 +1,45 @@
+.top-rated {
+    margin-top: 2em;
+    transition: all 0.6s ease;
+    max-width: 100%;
+    overflow: hidden;
+    .top-movies{
+        .movies-title{
+            padding: .8em 0;
+            h1{
+                color: rgba(255, 255, 255, 0.808);
+                font-size: 1.1em;
+            }
+            h3{
+                color: $subtitle-grey;
+            }
+        }
+    }
+    .top-series{
+        margin-top: 4em;
+        .series-title{
+            padding: .8em 0;
+            h1{
+                color: rgba(255, 255, 255, 0.60);
+                font-size: 1.1em;
+            }
+            h3{
+                color: $subtitle-grey;
+            }
+        }
+    }
+    .top-movies-list, .top-series-list{
+        width: 100%;
+        min-height: 80vh;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-column-gap: 1rem;
+        grid-row-gap: 3rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .top-rated-open{
+        margin-left: 20%;
+    }
+}

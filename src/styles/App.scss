@@ -1,0 +1,48 @@
+@import url(
+    'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap'
+);
+
+$title-grey: #444;
+$subtitle-grey: #7b7b7b;
+$main-red: #E50914;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+};
+
+body{
+    font-family: Poppins, sans-serif;
+    background-color: rgb(0, 0, 0);
+    margin: 1em 2em;
+    overflow-x: hidden;
+}; 
+
+html{
+    &::-webkit-scrollbar{
+        width: 0.5em;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #000;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #2b2b2b9a;
+    }
+}
+
+@import './Home';
+@import './Movies';
+@import './Series';
+@import './NavBar';
+@import './Search';
+@import './SideNav';
+@import './MovieComponent';
+@import './SerieComponent';
+@import './Footer';
+@import './MovieDetails';
+@import './SerieDetails';
+@import './Newest';
+@import './TopRated';
+@import './Upcoming';
+@import './SearchPage';

@@ -1,0 +1,28 @@
+.search{
+    position: relative;
+    max-width: 100%;
+    .search-icon{
+        position: absolute;
+        top: 0.85em;
+        right: 1.5em;
+        cursor: pointer;
+    }
+    input{
+        width: 30vw;
+        font-size: 0.8rem;
+        padding: 0.5rem 1.5rem;
+        font-family: Poppins, sans-serif;
+        background-color: rgba(26, 26, 26, 0.5);
+        border: none;
+        outline: none;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .search{
+        input{
+            width: 50vw;
+        }   
+    }
+}
