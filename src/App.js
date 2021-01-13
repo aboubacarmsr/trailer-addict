@@ -20,7 +20,6 @@ function App() {
   const [isFrench, setIsFrench] = useState(true);
   const [toSearch, setToSearch] = useState("");
   const [windowWidth, setWindowWidth] = useState("");
-  // const isPC = windowWidth >= 1024 ? true : false;
   const [isOpen, setIsOpen] = useState(true);
 
   console.log(windowWidth);
@@ -31,7 +30,7 @@ function App() {
       if(windowWidth < 1024) {
         setIsOpen(false);
       }
-      if(windowWidth >= 1024) {
+      else if(windowWidth >= 1024) {
         setIsOpen(true);
       }
     }
