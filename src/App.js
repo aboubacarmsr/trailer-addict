@@ -34,7 +34,7 @@ function App() {
         setIsOpen(true);
       }
     }
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('load', handleResize);
   }, [])
 
   return (
