@@ -34,7 +34,6 @@ function App() {
       }
     }
     window.addEventListener('load', handleResize);
-    console.log(windowWidth);
   }, [])
 
   return (
