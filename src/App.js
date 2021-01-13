@@ -19,10 +19,9 @@ import SearchPage from './pages/SearchPage';
 function App() {
   const [isFrench, setIsFrench] = useState(true);
   const [toSearch, setToSearch] = useState("");
-  const [windowWidth, setWindowWidth] = useState("");
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isOpen, setIsOpen] = useState(true);
 
-  console.log(windowWidth);
 
   useEffect(() => {
     function handleResize() {
@@ -35,6 +34,7 @@ function App() {
       }
     }
     window.addEventListener('load', handleResize);
+    console.log(windowWidth);
   }, [])
 
   return (
