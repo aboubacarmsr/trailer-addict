@@ -6,25 +6,10 @@
     .upcoming-movies{
         .movies-title{
             padding: .8em 0;
+            margin-bottom: 1em;
             h1{
-                color: rgba(255, 255, 255, 0.808);
+                color: rgb(255, 255, 255);
                 font-size: 1.1em;
-            }
-            h3{
-                color: $subtitle-grey;
-            }
-        }
-    }
-    .upcoming-series{
-        margin-top: 4em;
-        .series-title{
-            padding: .8em 0;
-            h1{
-                color: rgba(255, 255, 255, 0.60);
-                font-size: 1.1em;
-            }
-            h3{
-                color: $subtitle-grey;
             }
         }
     }

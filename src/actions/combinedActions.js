@@ -30,3 +30,21 @@ export const searchSomething = (name, language, page) => async (dispatch) => {
         }
     })
 }
+
+export const addToWatchlist = (movie) => dispatch => {
+    dispatch({
+        type : "ADD_TO_WATCHLIST",
+        payload: {
+            movie: movie
+        }
+    })
+}
+
+export const removeFromWatchlist = (list) => dispatch => {
+    dispatch({
+        type: "REMOVE_FROM_WATCHLIST",
+        payload: {
+            watchlist: list
+        }
+    })
+}

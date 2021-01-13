@@ -12,6 +12,21 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 //Thunk gere les appels asynchrones avec Redux
 const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)));
 
+//Local Storage
+const saveToLocalStorage = (state) => {
+  try{
+    const serializedState = JSON.stringify(state.allTrends.watchlist);
+    localStorage.setItem('watchlist', serializedState);
+  }
+  catch(error){
+    console.log(error);
+  }
+};
+
+store.subscribe(() => saveToLocalStorage(store.getState()));
+
+//FIN Local Storage
+
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>

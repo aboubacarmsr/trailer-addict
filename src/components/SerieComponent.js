@@ -1,7 +1,7 @@
 import React from 'react'
 import { fetchCover } from "../api/combinedAPI"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faBookmark, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,6 @@ const SerieComponent = ({id, title, cover_path, rating, release, overview, popul
                     <img src={cover} alt=""/>
                 </div>
                 <div className="etiquette">
-                     {/* <FontAwesomeIcon icon={faBookmark} className="bookmark"/>  */}
                      TV
                 </div> 
                 <motion.div className="overlay" initial={{ opacity: 0 }} animate={{ opacity: 1}}
@@ -26,7 +25,6 @@ const SerieComponent = ({id, title, cover_path, rating, release, overview, popul
                     <div className="subtitle">
                     <h4> <FontAwesomeIcon icon={faStar} style={{ color: "yellow" }}/> {rating} </h4>
                     <h5> {release} </h5>
-                    {/* <FontAwesomeIcon icon={faHeart} className="heart"/> */}
                     </div>
                     <div className="overview">
                         <p> {overview} </p>

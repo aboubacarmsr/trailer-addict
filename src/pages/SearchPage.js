@@ -15,7 +15,7 @@ const SearchPage = ({ isOpen, isFrench, toSearch }) => {
       dispatch(searchSomething(toSearch, language, page))
     }, [dispatch, toSearch, page, language])
 
-    const { searched, numOfPages, numOfResults } = useSelector((state) => state.allTrends);
+    const { searched, numOfPages } = useSelector((state) => state.allTrends);
 
     const printSearched = searched.map((item) => {
         if (item.media_type === "movie") {
@@ -57,7 +57,7 @@ const SearchPage = ({ isOpen, isFrench, toSearch }) => {
         <div className={isOpen ? "search-page search-page-open" : "search-page"}>
             <div className="searched-movies">
                 <div className="movies-title">
-                    <h1> {numOfResults} {isFrench ? "résultats trouvés pour " : "results for "} {toSearch} </h1>
+                    <h1> {isFrench ? "Résultats trouvés pour " : "results for "} {toSearch} </h1>
                 </div>
                 <div className="searched-movies-list">
                     {printSearched}

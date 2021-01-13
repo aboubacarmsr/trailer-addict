@@ -1,24 +1,18 @@
 import React from 'react'
 import TMDB from '../images/tmdb.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookSquare, faInstagramSquare, faTwitterSquare } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = ({ isOpen }) => {
     return ( 
         <div className={isOpen ? "footer footer-open" : "footer"}>
             <div className="brand">
-                {/* <div className="brand-logo">
-                    <h3>TRAILER ADDICT</h3>
-                </div> */}
                 <div className="brand-name">
                     <p>
                         Designed and built by <span id="signature">@Aboubacar Mansare</span>
                     </p>
-                </div>
-                <div className="brand-social">
-                    <FontAwesomeIcon className="icon" icon={faFacebookSquare} />
-                    <FontAwesomeIcon className="icon" icon={faInstagramSquare} />
-                    <FontAwesomeIcon className="icon" icon={faTwitterSquare} />
+                    <p>
+                        Any feedback ? Want to talk ? Send me an <span><a href = "mailto: aboubacarmsr@gmail.com">email</a></span> or add me on 
+                        <span> <a href="https://www.facebook.com/aboubacarmsr" target="_blank" rel="noopener noreferrer"> Facebook </a> </span> !
+                    </p>
                 </div>
             </div>
             <div className="copyright">

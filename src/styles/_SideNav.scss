@@ -14,7 +14,7 @@
     overflow: hidden;
     .logo {
         margin-top: 4em;
-        margin-bottom: 8em;
+        margin-bottom: 5em;
         margin-left: 3.5em;
         font-size: 0.65em;
         color: #f1faee;
@@ -24,6 +24,14 @@
     .classeur{
         padding: 1em 0;
         text-align: justify;
+        h4{
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.623);
+            letter-spacing: 2px;
+            margin-left: 3em;
+            padding: 1em;
+        }
         ul{
             li{
                 width: 100%;
@@ -31,7 +39,7 @@
                 font-weight: 500;
                 cursor: pointer;
                 list-style: none;
-                transition: all 0.4s ease;
+                transition: all 0.5s ease;
                 white-space: nowrap;
                 padding: 0.7em 0;
             }
@@ -40,12 +48,17 @@
     .navlink{
         width: 100%;
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.671);
+        color: rgba(255, 255, 255, 0.801);
         padding: 0.5em 11em 0.5em 3em;
         letter-spacing: .5px;
-        transition: all .9s ease;
+        transition: all .5s ease;
         &:hover{
-            background-color:rgba(197, 189, 199, 0.11);              
+            background-color:rgba(255, 255, 255, 0.055);              
+        }
+        span{
+            padding: 1em;
+            font-size: 0.7rem;
+            color: #f3f169;
         }
     }
 }
@@ -63,11 +76,13 @@
         background-color: rgb(15, 15, 15);
         .logo {
             margin-top: 3em;
-            margin-bottom: 6em;
-            // margin-left: 3.5em;
+            margin-bottom: 3em;
         } 
         .classeur{
             margin: 0 auto;
+            h4{
+                margin-left: 2em;
+            }
             ul{
                 li{
                     margin-left: 1em;
@@ -79,7 +94,6 @@
         .navlink{
             max-width: 100%;
             text-decoration: none;
-            color: #fff;
             padding: 0.5em 1em;
             transition: all .9s ease;
             &:hover{

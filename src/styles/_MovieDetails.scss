@@ -30,7 +30,7 @@
         }
         .top-details{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             .poster{
                 width: 30%;
                 margin-right: 2em;
@@ -61,22 +61,31 @@
                             padding: .8em;
                             font-size: 0.8em;
                             font-weight: 500;
-                            transition: all 0.6s ease;
+                            transition: all 1s ease;
                             cursor: pointer;
                         } 
                         .add-button{
                             border: 1px solid rgba(255, 255, 255, 0.158);
-                            &:hover{
-                                background-color: #d90429;
-                            }
                             .add-icon {
                                 margin-right: 0.5em;
                             }
+                            &:hover,
+                            &:focus {
+                                border: 1px solid black;
+                                box-shadow: inset 9.5em 0 0 0 #482ff7;
+                            }
+                        }
+                        .active {
+                            border: 1px solid black;
+                            background-color: #482ff7;
                         }
                         .play-button {
-                            background-color: #d90429;
+                            background-color: #444444;
                             .play-icon {
                                 margin-right: 0.5em;
+                            }
+                            &:hover {
+                                background-color: #f21b3f;
                             }
                         }
                     }
@@ -132,6 +141,7 @@
                 justify-content: flex-start;
                 .poster{
                     width: 100%; 
+                    margin-bottom: 1em;
                     img{
                         width: 100%;
                     }
@@ -144,6 +154,13 @@
                             flex-wrap: wrap;
                         }
                     }
+                    // .other-bottom{
+                    //     .cast{
+                    //         display: flex;
+                    //         flex-direction: column;
+                    //         align-items: center;
+                    //     }
+                    // }
                     .buttons {
                         margin: 1em 0;
                     }

@@ -1,9 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilm, faVideo, faGlobeAfrica, faFireAlt, faStar, faClock, faHeart, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink } from "react-router-dom";
 
 const SideNavEnglish = ({isOpen}) => {
+  const { watchlist } = useSelector(state => state.allTrends);
+
   return (
     <nav className={isOpen ? "side-nav side-nav-open" : "side-nav"}>
       <div className="logo">
@@ -13,40 +16,36 @@ const SideNavEnglish = ({isOpen}) => {
       </div>
       <div className="container-wrapper">
       <div className="classeur classeur-1">
+        <h4>CATEGORIES</h4>
         <ul>
-          <li><NavLink className="navlink" to="/movies" activeStyle= {{ backgroundColor : "#d90429", color: "#fff" }}>
+          <li><NavLink className="navlink" to="/movies" activeStyle= {{ borderLeft: "4px solid #482ff7", backgroundColor : "rgba(255, 255, 255, 0.055)", color: "#fff" }}>
               <FontAwesomeIcon icon={faFilm} style={{marginRight : "1em"}}/>Movies</NavLink></li>
-          <li><NavLink className="navlink" to="/series" activeStyle= {{ backgroundColor : "#d90429", color: "#fff" }}>
+          <li><NavLink className="navlink" to="/series" activeStyle= {{ borderLeft: "4px solid #482ff7", backgroundColor : "rgba(255, 255, 255, 0.055)", color: "#fff" }}>
             <FontAwesomeIcon icon={faVideo} style={{marginRight : "1em"}}/>Tv Shows</NavLink></li>
         </ul>
       </div>
       <div className="classeur classeur-2">
+        <h4>EXPLORE</h4>
         <ul>
-          <li><NavLink className="navlink" exact to="/" activeStyle= {{ backgroundColor : "#d90429", color: "#fff" }}>
+          <li><NavLink className="navlink" exact to="/" activeStyle= {{ borderLeft: "4px solid #482ff7", backgroundColor : "rgba(255, 255, 255, 0.055)", color: "#fff" }}>
           <FontAwesomeIcon icon={faGlobeAfrica} style={{marginRight : "1em"}}/>Discover</NavLink></li>
-          <li><NavLink className="navlink" to="/new" activeStyle= {{ backgroundColor : "#d90429", color: "#fff" }}>
+          <li><NavLink className="navlink" to="/new" activeStyle= {{ borderLeft: "4px solid #482ff7", backgroundColor : "rgba(255, 255, 255, 0.055)", color: "#fff" }}>
           <FontAwesomeIcon icon={faFireAlt} style={{marginRight : "1em"}}/>Latest</NavLink></li>
-          <li><NavLink className="navlink" to="/toprated" activeStyle= {{ backgroundColor : "#d90429", color: "#fff" }}>
+          <li><NavLink className="navlink" to="/toprated" activeStyle= {{ borderLeft: "4px solid #482ff7", backgroundColor : "rgba(255, 255, 255, 0.055)", color: "#fff" }}>
           <FontAwesomeIcon icon={faStar} style={{marginRight : "1em"}}/>Top Rated</NavLink></li>
-          <li><NavLink className="navlink" to="/upcoming" activeStyle= {{ backgroundColor : "#d90429", color: "#fff" }}>
+          <li><NavLink className="navlink" to="/upcoming" activeStyle= {{ borderLeft: "4px solid #482ff7", backgroundColor : "rgba(255, 255, 255, 0.055)", color: "#fff" }}>
           <FontAwesomeIcon icon={faClock} style={{marginRight : "1em"}}/>Upcoming</NavLink></li>
         </ul>
       </div>
       <div className="classeur classeur-3">
+        <h4>LIBRARY</h4>
         <ul>
-          <li><NavLink className="navlink" to="/recommandation" activeStyle={{ backgroundColor: "#d90429", color: "#fff" }}>
+          <li><NavLink className="navlink" to="/watchlist" activeStyle= {{ borderLeft: "4px solid #482ff7", backgroundColor : "rgba(255, 255, 255, 0.055)", color: "#fff" }}>
+          <FontAwesomeIcon icon={faHeart} style={{color : "#482ff7", marginRight : "1em"}}/>Watch List <span> {"("}{watchlist.length}{")"} </span></NavLink></li>
+          <li><NavLink className="navlink" to="/recommandation" activeStyle={{ borderLeft: "4px solid #482ff7", backgroundColor : "rgba(255, 255, 255, 0.055)", color: "#fff" }}>
           <FontAwesomeIcon icon={faBookmark} style={{marginRight : "1em"}}/>Recommandations</NavLink></li>
-          <li><NavLink className="navlink" to="/watchlist" activeStyle= {{ backgroundColor : "#d90429", color: "#fff" }}>
-          <FontAwesomeIcon icon={faHeart} style={{marginRight : "1em"}}/>Watch List</NavLink></li>
         </ul>
       </div>
-      {/* <div className="classeur classeur-4">
-        <ul>
-          <li> <FontAwesomeIcon style={{ fontSize: "1.2em"}} icon={faFacebook}/></li>
-          <li> <FontAwesomeIcon style={{ fontSize: "1.2em"}} icon={faInstagram}/></li>
-          <li> <FontAwesomeIcon style={{ fontSize: "1.2em"}} icon={faTwitter}/></li>
-        </ul>
-      </div> */}
       </div>
     </nav>
   );

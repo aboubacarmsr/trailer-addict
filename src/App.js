@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from "react-router-dom";
 import './styles/App.scss';
 import NavBar from './components/NavBar';
@@ -18,15 +18,32 @@ import SearchPage from './pages/SearchPage';
 
 function App() {
   const [isFrench, setIsFrench] = useState(true);
-  const [isOpen, setIsOpen] = useState(true);
   const [toSearch, setToSearch] = useState("");
+  const [windowWidth, setWindowWidth] = useState("");
+  // const isPC = windowWidth >= 1024 ? true : false;
+  const [isOpen, setIsOpen] = useState(true);
+
+  console.log(windowWidth);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+      if(windowWidth < 1024) {
+        setIsOpen(false);
+      }
+      if(windowWidth >= 1024) {
+        setIsOpen(true);
+      }
+    }
+    window.addEventListener('resize', handleResize);
+  }, [])
 
   return (
     <div className="App">
       <NavBar isOpen={isOpen} setIsOpen={setIsOpen} isFrench={isFrench} setIsFrench={setIsFrench} toSearch={toSearch} 
         setToSearch={setToSearch} />
       {
-        isFrench ? <SideNav isFrench={isFrench} isOpen={isOpen}/> : <SideNavEnglish isOpen={isOpen}/>
+        isFrench ? <SideNav isOpen={isOpen}/> : <SideNavEnglish isOpen={isOpen}/>
       }
       <Switch>
         <Route exact path="/">

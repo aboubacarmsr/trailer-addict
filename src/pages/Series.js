@@ -74,23 +74,9 @@ const Series = ({isFrench, isOpen}) => {
           popularity={item.popularity}
         />
     )
-    //Traduction
-    const headerFrench = 
-        <div className="series-title">
-            <h1>Vous ne voulez pas perdre de temps ?</h1>
-            <h3>Voici une selection des séries les plus populaires en ce moment</h3>
-        </div>
-    const headerEnglish = 
-        <div className="series-title">
-            <h1>You don't want to waste time ?</h1>
-            <h3>Here is a selection of the most popular series at the moment</h3>
-        </div>
 
     return ( 
         <div className={isOpen ? "series series-open" : "series"}>
-            {/* {
-                isFrench ? headerFrench : headerEnglish
-            } */}
             <div className="series-title">
                 <ul>{isFrench ? frenchCategories : englishCategories}</ul>
             </div>

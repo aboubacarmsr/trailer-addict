@@ -4,6 +4,7 @@ const initState = {
     netflixOriginals: [],
     amazonOriginals: [],
     searched: [],
+    watchlist: localStorage.getItem('watchlist') ? JSON.parse(localStorage.getItem('watchlist')) : [],
 }
 
 const combinedReducers = ( state = initState, action ) => {
@@ -22,6 +23,16 @@ const combinedReducers = ( state = initState, action ) => {
                 searched: action.payload.searched,
                 numOfPages: action.payload.numOfPages,
                 numOfResults: action.payload.numOfResults
+            }
+        case "ADD_TO_WATCHLIST":
+            return {
+                ...state,
+                watchlist: [...state.watchlist, action.payload.movie],
+            }
+        case "REMOVE_FROM_WATCHLIST":
+            return {
+                ...state,
+                watchlist: action.payload.watchlist
             }
         default:
             return {

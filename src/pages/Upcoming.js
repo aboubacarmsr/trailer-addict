@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchUpcomingMovies } from '../actions/movieActions'
-import { fetchUpcomingSeries } from '../actions/serieActions'
 import MovieComponent from '../components/MovieComponent'
-import SerieComponent from '../components/SerieComponent'
 
 const Upcoming = ({ isFrench, isOpen }) => {
     const dispatch = useDispatch();

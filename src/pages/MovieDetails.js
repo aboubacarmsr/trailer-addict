@@ -2,8 +2,9 @@ import React, {useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
 import { fetchMovieDetails } from '../actions/movieDetailsActions'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faPlus, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { addToWatchlist, removeFromWatchlist } from '../actions/combinedActions'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar, faPlus, faPlay, faCheck } from '@fortawesome/free-solid-svg-icons'
 import { fetchCover } from '../api/combinedAPI'
 import MovieComponent from '../components/MovieComponent'
 
@@ -21,7 +22,22 @@ const MovieDetails = ({ isOpen, isFrench }) => {
     }, [dispatch, id, language]);
 
     //Recuperer les détails
-    const { movie, isLoading } = useSelector((state) => state.movieDetails);
+    const { movie, isLoading} = useSelector((state) => state.movieDetails);
+    const { watchlist } = useSelector((state) => state.allTrends);
+
+    //Watchlist
+    //Verifier que le film existe dans la watchlist
+    const checkExistence = watchlist.find(item => item.id === movie.id); 
+    const movieExists = checkExistence ? true : false;
+
+    const addToWatchListHandler = () => {
+        if(movieExists){
+            const newWatchlist =  watchlist.filter(item => item.id !== movie.id);
+            dispatch(removeFromWatchlist(newWatchlist));
+        } else {
+            dispatch(addToWatchlist(movie));
+        }
+    }
 
     //Realisateur
     const crewList = movie.credits.crew;
@@ -106,13 +122,15 @@ const MovieDetails = ({ isOpen, isFrench }) => {
                         <div className="other">
                             <div className="other-top">
                                 <h1> {title} </h1>
-                                <h3><FontAwesomeIcon icon={faStar} style={{ color: "yellow" }} /> <span className="rating">{voteAverage}</span>/ {voteCount} votes </h3>
+                                <h3><FontAwesomeIcon icon={faStar} style={{ color: "yellow" }} /> 
+                                <span className="rating">{voteAverage}</span>/ {voteCount} votes </h3>
                                 <div className="genres">
                                     {genres}
                                 </div>
                                 <div className="buttons">
-                                    <div className="add-button button">
-                                        <FontAwesomeIcon icon={faPlus} className="add-icon" /> WATCH LIST
+                                    <div className={movieExists ? "add-button button active" : "add-button button"} 
+                                        onClick={addToWatchListHandler}>
+                                        <FontAwesomeIcon icon={ movieExists ? faCheck : faPlus } className="add-icon" /> WATCH LIST
                                     </div>
                                     {
                                         homepage &&

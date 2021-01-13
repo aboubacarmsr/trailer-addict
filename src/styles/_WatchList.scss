@@ -1,0 +1,41 @@
+.watchlist {
+    margin-top: 2em;
+    transition: all 0.6s ease;
+    max-width: 100%;
+    overflow: hidden;
+    .watchlist-title{
+        padding: .8em 0;
+        margin-bottom: 1em;
+        h1{
+            color: #fff;
+            font-size: 1.1em;
+        }
+        h3{
+            color: $subtitle-grey;
+            font-size: 0.95em;
+        }
+    }
+    .watchlist-list{
+        width: 100%;
+        min-height: 80vh;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 0.3fr));
+        grid-column-gap: 1rem;
+        grid-row-gap: 3rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .watchlist-open {
+        margin-left: 20%;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .watchlist{
+        .watchlist-list {
+            justify-content: center;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 0.8fr));
+        }
+    }
+}

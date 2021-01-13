@@ -3,9 +3,10 @@ import SerieComponent from '../components/SerieComponent'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchSerieDetails } from '../actions/serieDetailsActions'
-import { fetchCover, fetchBackdrop } from '../api/combinedAPI'
+import { addToWatchlist, removeFromWatchlist } from '../actions/combinedActions'
+import { fetchCover } from '../api/combinedAPI'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faPlay, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faPlay, faPlus, faCheck } from '@fortawesome/free-solid-svg-icons'
 
 const SerieDetails = ({isOpen, isFrench}) => {
     //Obtention de l'id passé en paramètre
@@ -21,6 +22,21 @@ const SerieDetails = ({isOpen, isFrench}) => {
     }, [dispatch, id, language]);
 
     const { serie, isLoading } = useSelector((state) => state.serieDetails);
+    const { watchlist } = useSelector((state) => state.allTrends);
+
+    //Watchlist
+    //Verifier que le film existe dans la watchlist
+    const checkExistence = watchlist.find(item => item.id === serie.id); 
+    const serieExists = checkExistence ? true : false;
+
+    const addToWatchListHandler = () => {
+        if(serieExists){
+            const newWatchlist =  watchlist.filter(item => item.id !== serie.id);
+            dispatch(removeFromWatchlist(newWatchlist));
+        } else {
+            dispatch(addToWatchlist(serie));
+        }
+    }
 
     //INFOS
     const title = serie.name;
@@ -34,11 +50,9 @@ const SerieDetails = ({isOpen, isFrench}) => {
     const voteAverage = serie.vote_average;
     const homepage = serie.homepage;
     const cover = fetchCover(serie.poster_path); 
-    const backdrop = fetchBackdrop(serie.backdrop_path);
     const genres = serie.genres.map((genre) => (<span key={genre.id}>{genre.name}</span>));
     const creators = serie.created_by.map(creator => <span key={creator.id}> {creator.name} </span>);
     const networks = serie.networks.map(network => <span key={network.id}> {network.name} </span>)
-    const productionCompanies = serie.production_companies.map(company => <span key={company.id}> {company.name} </span>)
 
     //Trailer
     let videos = serie.videos.results;
@@ -88,8 +102,9 @@ const SerieDetails = ({isOpen, isFrench}) => {
                                     {genres}
                                 </div>
                                 <div className="buttons">
-                                    <div className="add-button button">
-                                        <FontAwesomeIcon icon={faPlus} className="add-icon" /> WATCH LIST
+                                    <div className={serieExists ? "add-button button active" : "add-button button"} 
+                                        onClick={addToWatchListHandler}>
+                                        <FontAwesomeIcon icon={ serieExists ? faCheck : faPlus } className="add-icon" /> WATCH LIST
                                     </div>
                                     {
                                         homepage &&
