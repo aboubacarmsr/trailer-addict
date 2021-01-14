@@ -39,3 +39,11 @@
         margin-left: 20%;
     }
 }
+
+@media screen and (max-width: 700px){
+    .newest{
+        .new-movies-list, .new-series-list{
+            justify-content: center;
+        }
+    }
+}

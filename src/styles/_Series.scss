@@ -44,7 +44,6 @@
     .popular-series{
         min-height: 80vh;
         display: grid;
-        justify-content: center;
         grid-template-columns: repeat(auto-fit, minmax(220px, 0.8fr));
         grid-column-gap: 1rem;
         grid-row-gap: 3rem;
@@ -61,5 +60,13 @@
 @media screen and (min-width: 1024px){
     .series-open{
         margin-left: 20%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .series{
+        .popular-series{
+            justify-content: center;
+        }
     }
 }

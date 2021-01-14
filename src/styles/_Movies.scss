@@ -9,7 +9,7 @@
             color: $title-grey;
             font-size: 1.1em;
         }
-        h3{
+        h3{ 
             color: $subtitle-grey;
         }
     }
@@ -62,5 +62,13 @@
 @media screen and (min-width: 1024px){
     .movies-open{
         margin-left: 20%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .movies{
+        .popular-movies{
+            justify-content: center;
+        }
     }
 }

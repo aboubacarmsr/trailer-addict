@@ -28,3 +28,11 @@
         margin-left: 20%;
     }
 }
+
+@media screen and (max-width: 700px){
+    .upcoming{
+        .upcoming-movies-list, .upcoming-series-list{
+            justify-content: center;
+        }
+    }
+}

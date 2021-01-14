@@ -44,3 +44,11 @@
         margin-left: 20%;
     }
 }
+
+@media screen and (max-width: 700px){
+    .top-rated{
+        .top-movies-list, .top-series-list{
+            justify-content: center;
+        }
+    }
+}

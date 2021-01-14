@@ -41,7 +41,7 @@ const WatchList = ({ isFrench, isOpen }) => {
     return ( 
         <div className={ isOpen ? "watchlist watchlist-open" : "watchlist"} >
             <div className="watchlist-title">
-                <h1> Watch list </h1>
+                <h1> Watch List </h1>
                 <h3> {isFrench ? "Des films que vous voulez voir plus tard ? Enregistrez-les dans votre watchlist pour ne pas les perdre" : 
                 "Movies you want to see later ? Save them in your watchlist so as not to lose them"} </h3>
             </div>
