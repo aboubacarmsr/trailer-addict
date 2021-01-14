@@ -21,6 +21,8 @@ function App() {
   const [toSearch, setToSearch] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isOpen, setIsOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+  console.log(isMobile);
 
 
   useEffect(() => {
@@ -28,6 +30,7 @@ function App() {
       setWindowWidth(window.innerWidth);
       if(windowWidth < 1024) {
         setIsOpen(false);
+        setIsMobile(true);
       }
       else if(windowWidth >= 1024) {
         setIsOpen(true);
@@ -41,7 +44,8 @@ function App() {
       <NavBar isOpen={isOpen} setIsOpen={setIsOpen} isFrench={isFrench} setIsFrench={setIsFrench} toSearch={toSearch} 
         setToSearch={setToSearch} />
       {
-        isFrench ? <SideNav isOpen={isOpen}/> : <SideNavEnglish isOpen={isOpen}/>
+        isFrench ? <SideNav isMobile={isMobile} setIsOpen={setIsOpen} isOpen={isOpen}/> : 
+        <SideNavEnglish isMobile={isMobile} setIsOpen={setIsOpen} isOpen={isOpen}/>
       }
       <Switch>
         <Route exact path="/">
