@@ -6,7 +6,7 @@ import MovieComponent from "../components/MovieComponent";
 import ReactPaginate from "react-paginate";
 
 const Movies = ({ isFrench, isOpen }) => {
-
+ 
   const dispatch = useDispatch();
   const language = isFrench ? "fr" : "";
   const [genres, setGenres] = useState("");
