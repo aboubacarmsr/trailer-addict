@@ -49,7 +49,7 @@ const SideNavEnglish = ({ isOpen, setIsOpen, isMobile }) => {
         <ul>
           <li><NavLink className="navlink" to="/watchlist" onClick={hideSideNav} activeStyle= {{ borderLeft: "4px solid #482ff7", backgroundColor : "rgba(255, 255, 255, 0.055)", color: "#fff" }}>
           <FontAwesomeIcon icon={faHeart} style={{color : "#482ff7", marginRight : "1em"}}/>Watch List <span> {"("}{watchlist.length}{")"} </span></NavLink></li>
-          <li><NavLink className="navlink" to="/recommandation" onClick={hideSideNav} activeStyle={{ borderLeft: "4px solid #482ff7", backgroundColor : "rgba(255, 255, 255, 0.055)", color: "#fff" }}>
+          <li><NavLink className="navlink" to="/recommandations" onClick={hideSideNav} activeStyle={{ borderLeft: "4px solid #482ff7", backgroundColor : "rgba(255, 255, 255, 0.055)", color: "#fff" }}>
           <FontAwesomeIcon icon={faBookmark} style={{marginRight : "1em"}}/>Recommandations</NavLink></li>
         </ul>
       </div>

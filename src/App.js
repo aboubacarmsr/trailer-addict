@@ -15,6 +15,7 @@ import SideNav from './components/SideNav';
 import SideNavEnglish from './components/SideNavEnglish';
 import Footer from './components/Footer';
 import SearchPage from './pages/SearchPage';
+import Recommandations from './pages/Recommandations';
 
 function App() {
   const [isFrench, setIsFrench] = useState(true);
@@ -74,6 +75,9 @@ function App() {
         </Route>
         <Route exact path="/watchlist">
           <WatchList isOpen={isOpen} isFrench={isFrench}/>
+        </Route>
+        <Route exact path="/recommandations">
+          <Recommandations isOpen={isOpen} isFrench={isFrench}/>
         </Route>
         <Route exact path="/search">
           <SearchPage isOpen={isOpen} isFrench={isFrench} toSearch={toSearch}/>
