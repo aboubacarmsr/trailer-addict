@@ -9,7 +9,7 @@ import { fetchCover } from '../api/combinedAPI'
 import MovieComponent from '../components/MovieComponent'
 
 const MovieDetails = ({ isOpen, isFrench }) => {
-    //Obtention de l'id passé en paramètre
+    //Obtention de l'id passé en paramètre 
     const { id } = useParams();
 
     //Language
@@ -27,8 +27,7 @@ const MovieDetails = ({ isOpen, isFrench }) => {
 
     //Watchlist
     //Verifier que le film existe dans la watchlist
-    const checkExistence = watchlist.find(item => item.id === movie.id); 
-    const movieExists = checkExistence ? true : false;
+    const movieExists = watchlist.find(item => item.id === movie.id); 
 
     const addToWatchListHandler = () => {
         if(movieExists){

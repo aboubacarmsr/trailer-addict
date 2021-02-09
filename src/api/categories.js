@@ -129,7 +129,7 @@ export const categoriesMoviesFR = [
     },
     {
       id: 18,
-      name: "Drama",
+      name: "Drame",
       isActive: false,
     },
     {
@@ -282,7 +282,7 @@ export const categoriesSeriesFR = [
   },
   {
     "id": 18,
-    "name": "Drama"
+    "name": "Drame"
   },
   {
     "id": 10762,

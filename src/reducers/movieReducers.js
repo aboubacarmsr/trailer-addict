@@ -4,7 +4,7 @@ const initState = {
   upcomingMovies: [],
   topRatedMovies: [],
   numOfPages: 0
-};
+}; 
 
 const movieReducers = (state = initState, action) => {
   switch (action.type) {

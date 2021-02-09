@@ -5,7 +5,7 @@ import { categoriesMoviesEN, categoriesMoviesFR } from "../api/categories";
 import MovieComponent from "../components/MovieComponent";
 import ReactPaginate from "react-paginate";
 
-const Movies = ({ isFrench, isOpen }) => {
+const Movies = ({ isFrench, isOpen }) => { 
  
   const dispatch = useDispatch();
   const language = isFrench ? "fr" : "";

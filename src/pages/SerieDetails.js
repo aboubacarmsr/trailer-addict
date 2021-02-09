@@ -26,8 +26,7 @@ const SerieDetails = ({isOpen, isFrench}) => {
 
     //Watchlist
     //Verifier que le film existe dans la watchlist
-    const checkExistence = watchlist.find(item => item.id === serie.id); 
-    const serieExists = checkExistence ? true : false;
+    const serieExists = watchlist.find(item => item.id === serie.id); 
 
     const addToWatchListHandler = () => {
         if(serieExists){

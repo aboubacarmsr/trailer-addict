@@ -8,7 +8,7 @@ export const fetchPopularMovies = (language, page, genres) => async (dispatch) =
         payload: {
             popularMovies: popularMovies.data.results,
             numOfPages: popularMovies.data.total_pages
-        } 
+        }  
     })
 }
 
