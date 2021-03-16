@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faPlus, faPlay, faCheck } from '@fortawesome/free-solid-svg-icons'
 import { fetchCover } from '../api/combinedAPI'
 import MovieComponent from '../components/MovieComponent'
+import Meta from '../components/Meta'
 
 const MovieDetails = ({ isOpen, isFrench }) => {
     //Obtention de l'id passé en paramètre 
@@ -114,6 +115,7 @@ const MovieDetails = ({ isOpen, isFrench }) => {
             {
                 !isLoading && 
                 <div className={isOpen ? "all-details all-details-open" : "all-details"}>
+                    <Meta title={title} />
                     <div className="top-details">
                         <div className="poster">
                             <img src={cover} alt=""/>

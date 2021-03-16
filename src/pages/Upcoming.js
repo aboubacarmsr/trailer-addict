@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchUpcomingMovies } from '../actions/movieActions'
+import Meta from '../components/Meta'
 import MovieComponent from '../components/MovieComponent'
 
 const Upcoming = ({ isFrench, isOpen }) => {
     const dispatch = useDispatch();
     const language = isFrench ? "fr" : "";
-    const [page, setPage] = useState(1);
+    const page = 1;
 
     useEffect(() => {
         dispatch(fetchUpcomingMovies(language, page));
@@ -28,6 +29,7 @@ const Upcoming = ({ isFrench, isOpen }) => {
 
     return ( 
         <div className={isOpen ? "upcoming upcoming-open" : "upcoming"}>
+            <Meta title="Upcoming movies and tv shows" />
             <div className="upcoming-movies">
                 <div className="movies-title">
                     <h1> {isFrench ? "Les films les plus attendus" : "Most anticipated movies"} </h1>

@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
+import Meta from '../components/Meta'
 import MovieComponent from '../components/MovieComponent'
 import SerieComponent from '../components/SerieComponent'
 
 
-const WatchList = ({ isFrench, isOpen }) => {
-    const dispatch = useDispatch();
-    
+const WatchList = ({ isFrench, isOpen }) => {    
     const { watchlist } = useSelector((state) => state.allTrends);
 
     const printWatchList = watchlist.map(item => {
@@ -40,6 +39,7 @@ const WatchList = ({ isFrench, isOpen }) => {
     })
     return ( 
         <div className={ isOpen ? "watchlist watchlist-open" : "watchlist"} >
+          <Meta title="My Watchlist" />
             <div className="watchlist-title">
                 <h1> Watch List </h1>
                 <h3> {isFrench ? "Des films que vous voulez voir plus tard ? Enregistrez-les dans votre watchlist pour ne pas les perdre" : 

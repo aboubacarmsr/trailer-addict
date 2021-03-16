@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchNewMovies } from '../actions/movieActions'
 import { fetchNewSeries } from '../actions/serieActions'
+import Meta from '../components/Meta'
 import MovieComponent from '../components/MovieComponent'
 import SerieComponent from '../components/SerieComponent'
 
 const Newest = ({ isFrench, isOpen }) => {
     const dispatch = useDispatch();
     const language = isFrench ? "fr" : "";
-    const [page, setPage] = useState(1);
+    const page = 1;
 
     useEffect(() => {
         dispatch(fetchNewMovies(language, page));
@@ -46,6 +47,7 @@ const Newest = ({ isFrench, isOpen }) => {
 
     return ( 
         <div className={isOpen ? "newest newest-open" : "newest"}>
+            <Meta title="New movies and tv shows" />
             <div className="new-movies">
                 <div className="movies-title">
                     <h1> {isFrench ? "Au cinéma en ce moment" : "In theathers now"} </h1>

@@ -7,6 +7,7 @@ import { addToWatchlist, removeFromWatchlist } from '../actions/combinedActions'
 import { fetchCover } from '../api/combinedAPI'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faPlay, faPlus, faCheck } from '@fortawesome/free-solid-svg-icons'
+import Meta from '../components/Meta'
 
 const SerieDetails = ({isOpen, isFrench}) => {
     //Obtention de l'id passé en paramètre
@@ -86,9 +87,7 @@ const SerieDetails = ({isOpen, isFrench}) => {
             {
                 !isLoading && 
                 <div className={isOpen ? "all-details all-details-open" : "all-details"}>
-                    {/* <div className="backdrop">
-                        <img src={backdrop} alt=""/>
-                    </div> */}
+                    <Meta title={title} />
                     <div className="top-details">
                         <div className="poster">
                             <img src={cover} alt=""/>

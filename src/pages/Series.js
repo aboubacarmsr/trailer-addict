@@ -4,6 +4,7 @@ import { fetchPopularSeries } from '../actions/serieActions';
 import SerieComponent from '../components/SerieComponent';
 import { categoriesSeriesEN, categoriesSeriesFR } from '../api/categories';
 import ReactPaginate from "react-paginate";
+import Meta from '../components/Meta';
 
 const Series = ({isFrench, isOpen}) => {
     const dispatch = useDispatch();
@@ -77,6 +78,7 @@ const Series = ({isFrench, isOpen}) => {
 
     return ( 
         <div className={isOpen ? "series series-open" : "series"}>
+            <Meta title="Series" />
             <div className="series-title">
                 <ul>{isFrench ? frenchCategories : englishCategories}</ul>
             </div>

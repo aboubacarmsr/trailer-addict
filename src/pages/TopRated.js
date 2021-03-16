@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchTopRatedMovies } from '../actions/movieActions'
 import { fetchTopRatedSeries } from '../actions/serieActions'
 import MovieComponent from '../components/MovieComponent'
 import SerieComponent from '../components/SerieComponent'
+import Meta from '../components/Meta'
 
 const TopRated = ({ isFrench, isOpen }) => {
     const language = isFrench ? "fr" : "";
-    const [page, setPage] = useState(1);
+    const page = 1;
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -44,6 +45,7 @@ const TopRated = ({ isFrench, isOpen }) => {
 
     return ( 
         <div className={isOpen ? "top-rated top-rated-open" : "top-rated"}>
+            <Meta title = "Top Rated Movies and Tv Shows" />
             <div className="top-movies">
                 <div className="movies-title">
                     <h1> {isFrench ? "Les films les mieux notés" : "Top rated movies"} </h1>

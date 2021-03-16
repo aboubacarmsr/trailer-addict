@@ -7,6 +7,7 @@ import NetflixLogo from '../images/netflix.png';
 import AmazonLogo from '../images/prime.png';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Meta from "../components/Meta";
 
 const Home = (props) => {
 
@@ -171,7 +172,7 @@ const Home = (props) => {
 
   return (
     <div className={props.isOpen ? "home home-open" : "home"}>
-
+      <Meta />
       <div className="trendings daily">
         { isFrench ? dailyTitleFrench : dailyTitleEnglish }
         <Carousel

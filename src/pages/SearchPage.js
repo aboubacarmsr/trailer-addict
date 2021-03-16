@@ -4,6 +4,7 @@ import { searchSomething } from '../actions/combinedActions';
 import MovieComponent from '../components/MovieComponent'
 import SerieComponent from '../components/SerieComponent'
 import ReactPaginate from "react-paginate";
+import Meta from '../components/Meta';
 
 const SearchPage = ({ isOpen, isFrench, toSearch }) => {
 
@@ -55,6 +56,7 @@ const SearchPage = ({ isOpen, isFrench, toSearch }) => {
 
     return ( 
         <div className={isOpen ? "search-page search-page-open" : "search-page"}>
+          <Meta title= "Search" />
             <div className="searched-movies">
                 <div className="movies-title">
                     <h1> {isFrench ? "Résultats trouvés pour " : "results for "} {toSearch} </h1>

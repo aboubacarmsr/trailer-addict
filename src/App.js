@@ -23,8 +23,6 @@ function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isOpen, setIsOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  console.log(isMobile);
-
 
   useEffect(() => {
     function handleResize() {
@@ -38,7 +36,7 @@ function App() {
       }
     }
     window.addEventListener('load', handleResize);
-  }, [])
+  }, [windowWidth])
 
   return (
     <div className="App">

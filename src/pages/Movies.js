@@ -4,6 +4,7 @@ import { fetchPopularMovies } from "../actions/movieActions";
 import { categoriesMoviesEN, categoriesMoviesFR } from "../api/categories";
 import MovieComponent from "../components/MovieComponent";
 import ReactPaginate from "react-paginate";
+import Meta from "../components/Meta";
 
 const Movies = ({ isFrench, isOpen }) => { 
  
@@ -78,6 +79,7 @@ const Movies = ({ isFrench, isOpen }) => {
 
   return (
     <div className={isOpen ? "movies movies-open" : "movies"}>
+      <Meta title='Movies' />
           <div className="movies-title">
             <ul>{isFrench ? frenchCategories : englishCategories}</ul>
           </div>
